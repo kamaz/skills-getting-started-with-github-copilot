@@ -63,6 +63,7 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .activity-card h4 {
@@ -72,6 +73,64 @@ section h3 {
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.participants-section {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f2f6ff 100%);
+  border: 1px solid #d8e2ff;
+  border-radius: 8px;
+}
+
+.participants-title {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #1a237e;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.participants-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #2a3a6b;
+}
+
+.participants-list li {
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border: 1px solid #dde6ff;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.participant-email {
+  color: #2a3a6b;
+  font-size: 0.95rem;
+}
+
+.participants-list li:last-child {
+  margin-bottom: 0;
+}
+
+.participants-empty {
+  color: #6b789d;
+  font-style: italic;
+  border: 1px dashed #c6d4ff;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background-color: #fcfdff;
 }
 
 .form-group {
@@ -106,6 +165,55 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+button.participant-remove-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  padding: 0;
+  border: 1px solid #f1b4b4;
+  border-radius: 50%;
+  background-color: #fff2f2;
+  position: relative;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+button.participant-remove-btn::before,
+button.participant-remove-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  background-color: #b42318;
+  border-radius: 1px;
+}
+
+button.participant-remove-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+button.participant-remove-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+button.participant-remove-btn:hover {
+  background-color: #ffe3e3;
+  border-color: #ea9c9c;
+  transform: scale(1.05);
+}
+
+button.participant-remove-btn:focus-visible {
+  outline: 2px solid #c62828;
+  outline-offset: 2px;
+}
+
+button.participant-remove-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .message {
